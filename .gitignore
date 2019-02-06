@@ -23,3 +23,5 @@
 /nbdist/
 /.nb-gradle/
 /build/
+.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.properties
