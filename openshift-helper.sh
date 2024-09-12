@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# Check if fzf is installed
+if ! command -v fzf &> /dev/null; then
+    echo "fzf is not installed. Please install it first."
+    echo "On Ubuntu/Debian: sudo apt-get install fzf"
+    echo "On Fedora: sudo dnf install fzf"
+    echo "On macOS: brew install fzf"
+    exit 1
+fi
+
 # Function to login to OpenShift using a token
 login_to_openshift() {
     echo "Paste your full 'oc login --token' command (e.g., 'oc login --token=... --server=https://...'):"
@@ -138,8 +147,3 @@ show_menu() {
 login_to_openshift
 select_namespace
 show_menu
-
-
-# How to Use:
-# chmod +x openshift-helper.sh
-# ./openshift-helper.sh
